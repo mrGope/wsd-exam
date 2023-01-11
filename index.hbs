@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+body{
+    box-sizing: border-box;
+    margin: 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    display: flex;
+    justify-content:space-between ;
+    font-size: 1.2rem;
+    padding: 0 20px;
+    margin: auto;
+}
+
+header a{
+    border: 1px;
+    color: black;
+    padding: 20px;
+    color: rgb(124, 124, 124);
+    text-decoration: none;
+}
+
+header>a{
+    font-size: 1.5rem;
+    color: rgb(0, 0, 0);
+}
+
+.nopad{
+    padding: 0px !important;
+}
+.openBtn {
+    display: flex;
+  }
+.openButton {
+    border: none;
+    background-color:white;
+    cursor: pointer;
+    padding: 20px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
+}
+button:hover{
+    background-color: rgb(205, 205, 205);
+    color: black;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .modal-content {
+    margin: 50px auto;
+    border: 1px solid #999;
+    width: 40%;
+  }
+  span {
+    color: #666;
+    display: block;
+    padding: 0 0 5px;
+  }
+  form {
+    padding: 25px;
+    margin: 25px;
+    box-shadow: 0 2px 5px #f5f5f5;
+    background: #eee;
+  }
+  input,
+  textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #1c87c9;
+    outline: none;
+  }
+  .contact-form button {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    background: #1c87c9;
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+  }
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.nav-link{
+    display: flex;
+}
+
+.nav-link a{
+    border-left:1px solid rgba(0, 0, 0, 0.179);
+}
+
+.nav-link a:hover{
+    background-color: rgb(110, 104, 104);
+    color: black;
+}
+
+header>a:hover{
+    color: black;
+}
+
+.banner{
+    color: rgb(97, 164, 222);
+    text-align: justify;
+    padding: 20px 300px;
+}
+.dark{
+    background-color: rgb(1, 1, 11);
+}
+.light{
+    background-color: rgb(35, 36, 38);
+}
+
+.content{
+    display: flex;
+    padding: 50px 100px;
+    justify-content: space-around;
+}
+
+
+.tiles{
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+img{
+    width: 150px;
+}
+
+.grey{
+    background-color: rgba(200, 200, 200, 0.659);
+}
+
+.rotate {
+    transform: rotate(-90deg);
+  
+  
+    /* Legacy vendor prefixes that you probably don't need... */
+  
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+  
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+  
+    /* IE */
+    -ms-transform: rotate(-90deg);
+  
+    /* Opera */
+    -o-transform: rotate(-90deg);
+  
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  
+  }
+
+  .list
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+@keyframes fade-in {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+body {
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+
+* {
+    padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+.header__left img {
+  height: 40px;
+}
+
+.user__avatar {
+  border-radius: 50%;
+  width: 45px;
+}
+
+.header {
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 0 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+.header__left {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header__input {
+  display: flex;
+  align-items: center;
+  background-color: #eff2f5;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 999px;
+  
+}
+
+.header__input input {
+  border: none;
+  background-color: transparent;
+  outline-width: 0;
+  width: 35rem;
+  padding: 2px;
+}
+
+
+.header__info {
+  display: flex;
+  align-items: center;
+}
+
+.header__info h4 {
+  margin-left: 10px;
+  font-family: 'Poppins';
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+/* sidebar  */
+
+.sidebarRow {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebarRow:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.sidebarRow h4 {
+  margin-left: 20px;
+  font-weight: 600;
+}
+
+.sidebarRow .material-icons {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+}
+
+
+.main__body {
+  display: flex;
+}
+
+body {
+  background-color: #f1f2f5;
+}
+</style>
+</head>
+<body>
+
+<main>
+            <header>
+                <a href="#">INFOSYS SPRING</a>
+                <div class="nav-link">
+                    <a href="/add">ADD EMPLOYEE</a>
+                    <a href="/search">SEARCH EMPLOYEE</a>
+                    <a href="/delete">DELETE EMPLOYEE</a>
+                    <a href="/view">VIEW EMPLOYEE</a>
+                </div>
+            </header>
+
+            <div class="banner dark">
+                <p><h1>INFOSYS SPRING SOLUTIONS</h1> </p>
+            </div>
+            <div class="banner light">
+                <b>This is the new official INFOSYS SPRING Website</b>
+                <p>The website has been updated to provide EASY access to employee management of INFOSYS</p>
+            </div>
+            
+        <hr>
+    </main>
+    <br><br><br><br><br><br>
+    <hr>
+    <footer>
+      <p>
+        Copyright &copy; 2247203
+      </p>
+    </footer>
+</body>
+</html>

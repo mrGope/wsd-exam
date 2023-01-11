@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+      <form action="/searchstudent"  >
+   <h3>SEARCH CANDIDATE</h3>
+    <hr>
+
+    <label for="phn"><b>Employee ID</b></label>
+    <input type="phone" placeholder="type phone no to be searched" name="emid1" id="emid1" required>
+    <br><br>
+
+    <button type="submit" class="registerbtn">SEACRH EMPLOYEE</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./" style="color:black">BACK TO HOME PAGE</a>
+
+    <br>
+     {{#if mesg1}}
+     <h3>Data Found!</h3>
+      <tbody>
+      {{#data}}
+    <tr>
+     
+      <td>{{Emp_ID}}</td>
+      <td>{{Emp_Name}}</td>
+      <td>{{Emp_Designation}}</td>
+      <td>{{Emp_Department}}</td>
+      <td>{{Emp_Salary}}</td>
+      <td>{{Emp_location}}</td>
+    </tr>
+    {{/data}}
+     {{/if}}
+
+     {{#if mesg2}}
+     <h3>Data Not Found!</h3>
+     {{/if}}
+    </form>
+  </div>
+</body>
+</html>

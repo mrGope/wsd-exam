@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+       <form action="/addstudent"  >
+   <h3>ADD EMPLOYEE</h3>
+    <hr>
+    <br>
+    <label for="emid"><b>EMPLOYEE ID:</b></label>
+    <input type="text" placeholder="ID" name="emid" id="emid" required>
+    <br><br>
+    <label for="name"><b>EMPLOYEE NAME:</b></label>
+    <input type="text" placeholder="Enter Name" name="name" id="name" required>
+    <br><br>
+    <label for="phn"><b>EMPLOYEE DESIGNATION:</b></label>
+    <input type="phone" placeholder="Enter Phone Number" name="phone" id="phone" required>
+    <br><br>
+    <label for="eml-id"><b>DEPARTMENT:</b></label>
+    <input  placeholder="Enter Email Id" name="email" id="email" required>
+    <br><br>
+       <label for="sal"><b>SALARY:</b></label>
+    <input type="text" placeholder="ID" name="sal" id="sal" required>
+    <br><br>
+  <div class="gender_g">
+     <strong>LOCATION :</strong>
+     <input type="radio" name="gender" id="" value="Male"> Mumbai
+     <input type="radio" name="gender" id=""  value="Female">  CHENNAI
+  </div>
+  <br><br>
+    <button type="submit" class="registerbtn">ADD EMPLOYEE</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./" style="color:black">BACK TO HOME PAGE</a> <br>
+     
+     {{#if mesg}}
+     <h3>Data Inserted</h3>
+     {{/if}}
+
+      {{#if checkmesg}}
+     <h3>Emailid or Phoneno already present!</h3>
+     {{/if}}
+</form>
+</div>
+</body>
+</html>

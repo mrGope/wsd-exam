@@ -1,1 +1,1 @@
-# wsd-exam
+# WSD-Lab10
